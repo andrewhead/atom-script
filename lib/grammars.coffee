@@ -425,7 +425,7 @@ module.exports =
         if GrammarUtils.OperatingSystem.isWindows()
           args = ["/c javac -Xlint #{context.filename} && java #{className}"]
         else
-          args = ['-c', "javac -sourcepath #{sourcePath} '#{context.filepath}' && java #{classPackages}#{className}"]
+          args = ['-c', "javac -source 1.4 -nowarn -sourcepath #{sourcePath} '#{context.filepath}' && java #{classPackages}#{className}"]
 
         return args
 
